@@ -1,36 +1,22 @@
-# Music Visualizer
+# music-visualizer
 
-Real-time audio visualizer using the Web Audio API — upload a track or use the microphone and watch it come alive.
+Real-time audio visualizer using the Web Audio API. Play music from your microphone or an audio file and watch the frequency bars react.
 
-## Visualization modes
+## How it works
 
-- Bar spectrum analyzer
-- Circular waveform
-- Oscilloscope
-- Particle burst on beat detection
+The Web Audio API's `AnalyserNode` gives a frequency-domain snapshot of the audio stream every frame via `getByteFrequencyData()`. Each bar in the visualization maps to a frequency bin — left side is bass, right side is treble. Canvas redraws at 60fps.
 
 ## Features
 
-- File upload (MP3, WAV, OGG) or live microphone input
-- FFT size and smoothing controls
-- Color theme selector
-- Beat detection with BPM estimate
-- Fullscreen mode
-- Record and download visualization as WebM
+- Mic input or file upload
+- Bar chart, waveform, and circular visualizer modes
+- Color themes
+- Adjustable FFT size (more bars = more detail, more CPU)
 
-## Stack
-
-![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=flat&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-61dafb?style=flat&logo=react&logoColor=black)
-![Web Audio API](https://img.shields.io/badge/Web_Audio_API-orange?style=flat)
-![Canvas API](https://img.shields.io/badge/Canvas_API-orange?style=flat)
-![Vite](https://img.shields.io/badge/Vite-646cff?style=flat&logo=vite&logoColor=white)
-
-## Run locally
+## Run
 
 ```bash
 npm install && npm run dev
 ```
 
----
-Made by [9bzero](https://github.com/9bzero)
+> Works best with headphones to avoid mic feedback.
